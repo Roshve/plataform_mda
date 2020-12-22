@@ -1,0 +1,91 @@
+.text-mda {
+    color: #6aafff !important ;
+}
+
+.btn-mda{
+    background-color: #6aafff;
+    color: white;
+}
+.btn-mda:hover{
+    background-color: #3f6896 ;
+}
+
+#main .carousel-inner img {
+    height: 100vh;
+    object-fit: cover;
+    filter: grayscale(70%);
+}
+/* Carousel */
+
+#carousel {
+    position: relative;
+}
+
+#carousel .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#carousel .overlay .container,
+#carousel .overlay .row {
+    height: 100%;
+}
+
+/* Carousel */
+
+#team {
+    /* font-size: 14px; */
+    font-weight: 500;
+    color: #777;
+}
+
+#team img{
+    margin-top: -50px;
+}
+
+#team h3 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+#team .card{
+    border-radius: 1;
+    box-shadow: 5px 5px 15px #6aafff;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+
+#team .card:hover{
+    background: #6aafff;
+    color: #fff;
+    border: none;
+    box-shadow: 5px 5px 10px #9E9E9E;
+}
+
+#team .card:hover h3, #team .card:hover i{
+    color: #fff;
+}
+
+#place-time{
+    background-color: #343a40;
+    color: white;
+}
+
+#place-time img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* #footer {
+    background-image: linear-gradient(0deg, rgb(61, 103, 216),rgb(65, 80, 170),rgb(53, 69, 115));
+} */
+#footer a {
+    color: white;
+}

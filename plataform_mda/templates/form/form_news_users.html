@@ -1,0 +1,446 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>Form | New User</title>
+{% endblock %}
+
+{% block container %}
+
+{% load static %}
+
+    <main class="mt-5">
+      <div class="container shadow-lg bg-white rounded">
+        <div class="container">
+          <div class="row">
+            <div class="col" id="first-hired-box">
+              <h1 class="mt-4">Formulario de nuevos ingresos vs0.1</h1>
+              <hr />
+            </div>
+          </div>
+        </div>
+
+        <form id="regForm" method="POST" action="#">
+          <div id="form-jefe" class="container tab">
+            <div class="row pl-4 pr-4">
+              <div class="col">
+                <h4 class="mb-4 text-uppercase text-center">
+                  Si eres Jefe de sector ingresa tus datos aqui
+                </h4>
+                <hr class="mb-4" />
+              </div>
+
+              <div class="row pl-4 pr-4">
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="email"
+                    placeholder="Email *"
+                    name="email"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="Nombre *"
+                    name="name"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="Apellido *"
+                    name="lastname"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="(CC) Centro de costo *"
+                    name="centro_de_costo"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="Producto *"
+                    name="producto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="form-usuario" class="container tab">
+            <div class="row pl-4 pr-4">
+              <div class="col">
+                <h4 class="mb-4 text-uppercase text-center">
+                  Ingrese los datos del nuevo ingreso
+                </h4>
+                <hr class="mb-4" />
+              </div>
+
+              <div class="row pl-4 pr-4">
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="Nombre"
+                    name="name"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="Apellido"
+                    name="lastname"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="Consultora"
+                    name="consultora"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="DNI"
+                    name="DNI"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="Perfil similar a:"
+                    name="email"
+                  />
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <input
+                    class="form-control border-mda"
+                    type="text"
+                    placeholder="¿Remplaza a alguien?"
+                    name="email"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="device-work" class="container tab">
+            <div class="row">
+              <div class="col">
+                <h4 class="mb-4 text-uppercase text-center">
+                  Equipo de trabajo
+                </h4>
+                <hr class="mb-4" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-12 col-md-6 text-center">
+                <input type="radio" name="work" id="work-pc">
+                <label class="mda" for="work-pc">
+                  <img src="../assets/img/pc.jpg" alt="pc">PC
+                </label>
+              </div>
+
+              <div class="form-group col-12 col-md-6 text-center">
+                <input type="radio" name="work" id="work-notebook">
+                <label class="mda" for="work-notebook">
+                  <img src="../assets/img/notebook.jpg" alt="notebook">NOTEBOOK
+                </label>
+              </div>
+
+              <div class="form-group col-12 col-md-6 text-center">
+                  <input type="radio" name="work" id="work-mac">
+                <label class="mda" for="work-mac">
+                  <img src="../assets/img/mac_all_in_one.jpg" alt="mac"> MAC
+                </label>
+              </div>
+
+              <div class="form-group col-12 col-md-6 align-self-center text-center">
+                <input type="radio" name="work" id="work-no">
+                <label for="work-no">NO
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <h4 class="my-4 text-uppercase text-center">
+                  ¿equipamiento reutilizado por el sector?
+                </h4>
+                <hr>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col align-self-center text-center">
+                <input type="radio" name="reu-work" id="reu-work-si" />
+                <label for="reu-work-si">SI</label>
+              </div>
+
+              <div class="col align-self-center text-center">
+                <input type="radio" name="reu-work" id="reu-work-no" />
+                    <label for="reu-work-no">NO</label>
+              </div>
+            </div>
+          </div>
+
+          <div id="comunication-work" class="container tab">
+            <div class="row">
+              <div class="col">
+                <h4 class="text-uppercase my-4 text-center">
+                  dispositivos de comunicación
+                </h4>
+                <hr />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="container col-6">
+                <div class="row">
+                  <div class="col">
+                    <h4 class="text-uppercase my-4 text-center">
+                      Equipo celular
+                    </h4>
+                    <hr />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col align-self-center text-center">
+                    <input type="radio" name="celphone" id="celphone-si" />
+                    <label for="celphone-si">SI</label>
+                  </div>
+
+                  <div class="col align-self-center text-center">
+                    <input type="radio" name="celphone" id="celphone-no" />
+                    <label for="celphone-no">NO</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <p class="my-4 text-uppercase text-center">
+                      ¿equipamiento reutilizado por el sector?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col align-self-center text-center">
+                    <input
+                      type="radio"
+                      name="reu-celphone"
+                      id="reu-celphone-si"
+                    />
+                    <label for="reu-celphone-si">SI</label>
+                  </div>
+                  <div class="col align-self-center text-center">
+                    <input
+                      type="radio"
+                      name="reu-celphone"
+                      id="reu-celphone-no"
+                    />
+                    <label for="reu-celphone-no">NO</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container col-6">
+                <div class="row">
+                  <div class="col">
+                    <h4 class="my-4 text-uppercase text-center">
+                      Linea telefonica
+                    </h4>
+                    <hr />
+                    <p class="my-4 text-center">
+                      Aclarar si es linea nueva o cesion de linea a ln. (SOLO
+                      MOVISTAR o CLARO)
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col align-self-center text-center">
+                    <input
+                      type="radio"
+                      name="celphone-line"
+                      id="celphone-line-si"
+                    />
+                    <label for="celphone-line-si">SI</label>
+                  </div>
+
+                  <div class="col align-self-center text-center">
+                    <input
+                      type="radio"
+                      name="celphone-line"
+                      id="celphone-line-no"
+                    />
+                    <label for="celphone-line-no">NO</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <p class="my-4 text-uppercase text-center">
+                      ¿equipamiento reutilizado por el sector?
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col align-self-center text-center">
+                    <input
+                      type="radio"
+                      name="reu-celphone-line"
+                      id="reu-celphone-line-si"
+                    />
+                    <label for="reu-celphone-line-si">SI</label>
+                  </div>
+
+                  <div class="col align-self-center text-center">
+                    <input
+                      type="radio"
+                      name="reu-celphone-line"
+                      id="reu-celphone-line-no"
+                    />
+                    <label for="reu-celphone-line-no">NO</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="licens_aplications" class="container tab">
+            <div class="row">
+              <div class="col">
+                <h4 class="text-uppercase my-4 text-center">
+                  Licencia de Correo Office 365
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col align-self-center text-center">
+                <input type="radio" name="licens-365" id="licens-365-si" />
+                <label for="licens-365-si">SI</label>
+              </div>
+
+              <div class="col align-self-center text-center">
+                <input type="radio" name="licens-365" id="licens-365-no" />
+                <label for="licens-365-no">NO</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h4 class="my-4 text-uppercase text-center">telefono fijo</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col align-self-center text-center">
+                <input type="radio" name="phone" id="phone-si" />
+                <label for="phone-si">SI</label>
+              </div>
+
+              <div class="col align-self-center text-center">
+                <input type="radio" name="phone" id="phone-no" />
+                <label for="phone-no">NO</label>
+              </div>
+            </div>
+
+            <div class="container tab">
+              <div class="row">
+                <div class="col">
+                  <p class="text-uppercase my-4 text-center">
+                    ¿equipamiento reutilizado por el sector?
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col align-self-center text-center">
+                  <input type="radio" name="reu-phone" id="reu-phone-si" />
+                  <label for="reu-phone-si">SI</label>
+                </div>
+
+                <div class="col align-self-center text-center">
+                  <input type="radio" name="reu-phone" id="reu-phone-no" />
+                  <label for="reu-phone-no">NO</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h4 class="my-4 text-uppercase text-center">
+                  ¿Los equipos se encuentra presupuestados?
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col align-self-center text-center">
+                <input type="radio" name="presu-device" id="presu-device-si" />
+                <label for="presu-device-si">SI</label>
+              </div>
+
+              <div class="col align-self-center text-center">
+                <input type="radio" name="presu-device" id="presu-device-no" />
+                <label for="presu-device-no">NO</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col align-self-center text-center my-5">
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  id="prevBtn"
+                  onclick="nextPrev(-1)"
+                >
+                  Previous
+                </button>
+              </div>
+
+              <div class="col align-self-center text-center my-5">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+              </div>
+
+              <div class="col align-self-center text-center my-5">
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  id="nextBtn"
+                  onclick="nextPrev(1)"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="../js/user_news_form.js"></script>
+{% endblock %}
