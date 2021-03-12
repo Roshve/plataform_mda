@@ -1,0 +1,239 @@
+{% extends "./base_form.html" %}
+
+{% block head_content %}
+<title>Form | New User</title>
+{% endblock %}
+
+{% block container %}
+
+{% load static %}
+
+    <main id="contorno">
+      <div class="container base py-5 shadow-lg bg-white rounded">
+        
+        <div class="row">
+          <div class="col-xs-12 col-md-8 offset-md-2 block">
+            <div class="wrapper-progressBar">
+              <ul class="progressBar">
+                <li class="active">Jefe de sector</li>
+                <li>Nuevo ingreso</li>
+                <li>Equipo</li>
+                <li>Configuración de usuario</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <form id="regForm" method="POST" action="#">
+          {% csrf_token %}
+          
+          <div id="form-leader" class="container tab">
+            <div class="row pl-4 pr-4">
+              <div class="col-12">
+                <h4 class="mb-4">Jefe de sector</h4>
+              </div>
+
+              <div class="row pl-4 pr-4">
+                
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.leader_name.id_for_label }}">Nombre</label>
+                  {{ form.leader_name }}
+                </div>
+                
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.leader_lastname.id_for_label }}">Apellido</label>
+                  {{ form.leader_lastname }}
+                </div>
+
+                <div class="form-group col-12">
+                  <label for="{{ form.leader_email.id_for_label }}">Correo electronico</label>
+                  {{ form.leader_email }}
+                </div>
+                
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.cost_center.id_for_label }}">Centro de costo</label>
+                  {{ form.cost_center }}
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.product.id_for_label }}">Producto</label>
+                  {{ form.product }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="form-newuser" class="container tab">
+            <div class="row pl-4 pr-4">
+              <div class="col-12">
+                <h4 class="mb-4">Nuevo ingreso</h4>
+              </div>
+
+              <div class="row pl-4 pr-4">
+
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.newuser_name.id_for_label }}">Nombre</label>
+                  {{ form.newuser_name }}
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.newuser_lastname.id_for_label }}">Apellido</label>
+                  {{ form.newuser_lastname }}
+                </div>
+
+                  <div class="form-group col-12 col-md-6">
+                    <p>Metodo de ingreso</p>
+                    {% for radio in form.entry_method %}
+                    {{ radio }}
+                    {% endfor %}
+                  </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.external_company.id_for_label }}">Consultora</label>
+                  {{ form.external_company }}
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <p>Remplaza a alguien</p>
+                  {% for radio in form.replace_someone %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.who_is.id_for_label }}">¿Quien es?</label>
+                  {{ form.who_is }}
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.similar_profile.id_for_label }}">Perfil similar</label>
+                  {{ form.similar_profile }}
+                </div>
+
+                <div class="form-group col-12 col-md-6">
+                  <label for="{{ form.date_of_admission.id_for_label }}">Fecha de ingreso</label>
+                  {{ form.date_of_admission }}
+              </div>
+            </div>
+            </div>
+          </div>
+          
+          <div id="form-device" class="container tab">
+            <div class="row pl-4 pr-4">
+              <div class="col-12">
+                <h4 class="mb-4">Equipos</h4>
+              </div>
+              <div class="row pl-4 pr-4">
+                <div class="form-group col-12">
+                  <p>Dispositivos de trabajo</p>
+                  {% for radio in form.devices %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+                <div class="form-group col-12">
+                  <p>¿Dispositivo reutilizado por el sector?</p>
+                  {% for radio in form.re_use_devices %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+                <div class="form-group col-12">
+                  <p>Dispositivo celular</p>
+                  {% for radio in form.cellphone %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+                
+                <div class="form-group col-12">
+                  <p>¿Dispositivo reutilizado por el sector?</p>
+                  {% for radio in form.re_use_cellphone %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+                
+                <div class="form-group col-12">
+                  <p>Linea Celular</p>
+                  {% for radio in form.service_phone %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+                
+                <div class="form-group col-12">
+                  <p>Servicio telefonico</p>
+                  {% for radio in form.cellphone_line %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+
+                <div class="form-group col-12">
+                  <p>Linea reutilizada por el sector</p>
+                  {% for radio in form.re_use_cellphone_line %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+
+                <div class="form-group col-12">
+                  <p>Teléfono fijo</p>
+                  {% for radio in form.phone %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div id="form-config" class="container tab">
+            <div class="row pl-4 pr-4">
+              <div class="col-12">
+                <h4 class="mb-4">Configuración de Usuario</h4>
+              </div>
+              <div class="row pl-4 pr-4">
+                <div class="form-group col-12">
+                  <p>Preparación de dispositivo de trabajo</p>
+                  {{ form.prepare_device }}
+                </div>
+                <div class="form-group col-12">
+                  <p>Doble Boot</p>
+                  {% for radio in form.double_boot %}
+                  {{ radio }}
+                  {% endfor %}
+                </div>
+                <div class="form-group col-12">
+                    {{ form.apps_device }}
+                </div>
+                <div class="form-group col-12">
+                  <p>Licencia Office 365</p>
+                  {% for radio in form.licens_365 %}
+                  {{ radio }}
+                  {% endfor %}
+                  <p>Aclaración: La licencia de correo (Outlook) + Skype Empresarial (Office 365)
+                    tiene un valor de USD90/AÑO y se imputara  al Centro de costo autorizado.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col align-self-center text-center my-5">
+                <button class="btn btn-primary" type="button" id="prevBtn" onclick="nextPrev(-1)" style="display: none;">
+                  Previous
+                </button>
+              </div>
+
+              <div class="col align-self-center text-center my-5">
+                <span class="step active"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+              </div>
+
+              <div class="col align-self-center text-center my-5">
+                <button class="btn btn-primary" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </main>
+{% endblock %}

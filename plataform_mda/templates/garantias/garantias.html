@@ -1,0 +1,159 @@
+{% extends "base.html" %} {% load static %} {% block head_content %}
+<title>Garantias | ATU</title>
+{% endblock %} {% block container%}
+
+<div class="container shadow-lg bg-white rounded border p-3 my-5">
+  <section id="header">
+    <div class="row border bg-info">
+      <div class="col-12">
+        <h1 class="text-center">GARANTIAS</h1>
+      </div>
+    </div>
+  </section>
+
+  <section id="body">
+    <div class="row border">
+      <div class="col-12">
+        <h5>SISTEMAS ATU</h5>
+        <p>
+          <b>Nota:</b> La garantía de la batería tiene relación con la fecha de
+          facturación del hardware. Es posible que se le solicite proporcionar
+          el número de serie de la batería, el que corresponde a este rango de
+          fechas.
+        </p>
+        <form action="#" method="POST">{% csrf_token %}
+          <table class="table table-borderless text-center">
+            <thead>
+              <tr>
+                <th>Cantidad<hr></th>
+                <th>Serial<hr></th>
+                <th>Equipo<hr></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ form.baterias_7490 }}</td>
+                <td>AUT-PGFX4</td>
+                <td>Latitude 7490</td>
+              </tr>
+              <tr>
+                <td>{{ form.baterias_7480 }}</td>
+                <td>AUT-KG7VF</td>
+                <td>Latitude 7480</td>
+              </tr>
+              <tr>
+                <td>{{ form.baterias_E7470 }}</td>
+                <td>AUT-MC34Y</td>
+                <td>Latitude E7470</td>
+              </tr>
+            </tbody>
+          </table>
+        <p>
+        <b>Nota:</b> "Cambio de B" significa cambio de bateria, se cambio el estado ya
+        que ocupa mucho espacio en la plantilla de mail.
+        </p>
+            <table class="table table-borderless text-center">
+              <thead>
+                <tr>
+                  <th>Inventario<hr></th>
+                  <th>Modelo<hr></th>
+                  <th>¿Se recibio?<hr></th>
+                  <th>Vencimiento<hr></th>
+                  <th>¿Se hizo?<hr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" name="inve1" id="" /></td>
+                  <td>
+                    <select name="mode1" id="">
+                      <option>NAN</option>
+                      <option>7490</option>
+                      <option>7480</option>
+                      <option>E7470</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="dano1" id="">
+                      <option>NAN</option>
+                      <option>Hinchamiento</option>
+                      <option>Desgastada</option>
+                    </select>
+                    </td>
+                  <td><input type="text" name="venc1" id="" /></td>
+                  <td>
+                    <select name="camb1" id="">
+                      <option>NAN</option>
+                      <option>Cambio de B</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                  <td><input type="text" name="inve2" id="" /></td>
+                  <td>
+                      <select name="mode2" id="">
+                        <option>NAN</option>
+                        <option>7490</option>
+                        <option>7480</option>
+                        <option>E7470</option>
+                      </select>
+                  </td>
+                  <td>
+                    <select name="dano2" id="">
+                      <option>NAN</option>
+                      <option>Hinchamiento</option>
+                      <option>Desgastada</option>
+                    </select>
+                    </td>
+                  <td><input type="text" name="venc2" id="" /></td>
+                  <td>
+                    <select name="camb2" id="">
+                      <option>NAN</option>
+                      <option>Cambio de B</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                  <td><input type="text" name="inve3" id="" /></td>
+                  <td>
+                    <select name="mode3" id="">
+                      <option>NAN</option>
+                      <option>7490</option>
+                      <option>7480</option>
+                      <option>E7470</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="dano3" id="">
+                      <option>NAN</option>
+                      <option>Hinchamiento</option>
+                      <option>Desgastada</option>
+                    </select>
+                    </td>
+                  <td><input type="text" name="venc3" id="" /></td>
+                  <td>
+                    <select name="camb3" id="">
+                      <option>NAN</option>
+                      <option>Cambio de B</option>
+                    </select>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+        <button class="btn btn-mda col-md-4 offset-md-4 my-4" type="submit" value="Enviar">¡Enviar!</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section id="footer">
+      <div class="row border bg-danger">
+          <div class="col-12">
+              <h1 class="text-center">FOOTER</h1>
+            </div>
+        </div>
+    </section>
+    
+</div>
+{% endblock %}

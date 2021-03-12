@@ -14,8 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
+
+
+""" from plataform_mda import views as local_views """
+from pages.views import pages_home, form_news_users
+from garantias.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+
+    path('',pages_home),
+
+    path('form_news_users/', form_news_users, name="form_user"),
+
+    path('garantias/', index),
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
