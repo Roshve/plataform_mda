@@ -17,7 +17,7 @@ def pages_home(request):
 
 def send_email(data):
 
-    mail = str("mda_lcova@lnexternos.com.ar")
+    mail = ["mda_lcova@lnexternos.com.ar", "FDeBernardi@lanacion.com.ar", "iprieto@lanacion.com.ar"]
     template = get_template('form/mails/mail.html')
     content = template.render(data)
 
@@ -28,7 +28,7 @@ def send_email(data):
         asunto,
         'Sarasa',
         settings.EMAIL_HOST_USER,
-        [mail]
+        mail
     )
 
     email.attach_alternative(content, 'text/html')

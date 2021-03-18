@@ -6,9 +6,9 @@ class DateInput(forms.DateInput):
 class FormNewUser(forms.Form):
 
     #Form Leader
-    leader_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': 'Federico' }), max_length=100)
-    leader_lastname = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': 'De Bernardi' }), max_length=100)
-    leader_email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control ','placeholder': 'fdebernardi@lanacion.com.ar' }), max_length=320) 
+    leader_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control '}), max_length=100)
+    leader_lastname = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control '}), max_length=100)
+    leader_email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control '}), max_length=320) 
     cost_center = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': '708' }), max_length=3)
     product =  forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': '1313AZ' }), max_length=6)
 
@@ -18,10 +18,10 @@ class FormNewUser(forms.Form):
     newuser_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': 'Alvin' }), max_length=100)
     newuser_lastname = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': 'Yakitori' }), max_length=100)
     entry_method = forms.ChoiceField(widget=forms.RadioSelect, choices=(intern_extern))
-    external_company = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': 'Macsoul' }), max_length=100)
+    external_company = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control '}), max_length=100)
     replace_someone = forms.ChoiceField(widget=forms.RadioSelect, choices=(yes_no))
     who_is = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': 'Yeferson Guitierritos' }), max_length=100)
-    similar_profile = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ','placeholder': 'Christian Leguizamon' }), max_length=100)
+    similar_profile = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control ' }), max_length=100)
     date_of_admission = forms.DateField(widget=DateInput(attrs={'class': 'form-control ','min':'2021-03-01'}))
     
     #Form Devices
